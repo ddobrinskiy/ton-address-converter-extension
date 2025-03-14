@@ -2,12 +2,16 @@
 
 A Chrome extension that allows you to convert TON blockchain addresses between different formats.
 
+Vibe-coded with [Cursor](https://cursor.com/) with very little JS knowledge.
+
 ## Features
 
 - Convert between raw, user-friendly, and DNS formats of TON addresses
-- Copy converted addresses to clipboard with a single click
-- Simple and intuitive user interface
-- Keyboard shortcut: Shift+Command+K (⇧⌘K)
+- Auto-focus input field on popup open, just press ⌘V/Ctrl+V to paste your address
+- Copy converted addresses to clipboard with a single click on 📋 button
+
+<img src="./demo.gif" width="500" alt="Demo GIF">
+
 
 ## Installation
 
@@ -15,7 +19,7 @@ A Chrome extension that allows you to convert TON blockchain addresses between d
 2. Open Chrome and navigate to `chrome://extensions/`
 3. Enable "Developer mode" in the top-right corner
 4. Click "Load unpacked" and select the directory containing this extension
-5. The extension icon should appear in your browser toolbar
+5. The extension icon (💎) should appear in your browser toolbar
 
 ## Usage
 
