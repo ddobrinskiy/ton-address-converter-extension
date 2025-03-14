@@ -18,39 +18,51 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add click event listener to the paste button
     pasteButton.addEventListener('click', handlePasteButtonClick);
 
+    // Function to copy text to clipboard and show notification
+    function copyToClipboard(text, container) {
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                // Check if notification already exists
+                let notification = container.querySelector('.copy-notification');
+                
+                // If notification doesn't exist, create it
+                if (!notification) {
+                    notification = document.createElement('div');
+                    notification.className = 'copy-notification';
+                    container.appendChild(notification);
+                }
+                
+                // Show the notification
+                notification.textContent = 'Copied to clipboard!';
+                notification.style.display = 'block';
+                
+                // Hide the notification after 1.5 seconds
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 1500);
+            })
+            .catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+    }
+
     // Function to add click-to-copy functionality to all .addr elements
     function setupCopyToClipboard() {
         // Use event delegation for dynamically added .addr elements
         document.addEventListener('click', function(e) {
+            // Handle clicks on address elements
             if (e.target.classList.contains('addr')) {
                 const text = e.target.textContent;
-                const addrContainer = e.target.parentNode;
-                
-                // Copy the text to clipboard
-                navigator.clipboard.writeText(text)
-                    .then(() => {
-                        // Check if notification already exists
-                        let notification = addrContainer.querySelector('.copy-notification');
-                        
-                        // If notification doesn't exist, create it
-                        if (!notification) {
-                            notification = document.createElement('div');
-                            notification.className = 'copy-notification';
-                            addrContainer.appendChild(notification);
-                        }
-                        
-                        // Show the notification
-                        notification.textContent = 'Copied to clipboard!';
-                        notification.style.display = 'block';
-                        
-                        // Hide the notification after 1.5 seconds
-                        setTimeout(() => {
-                            notification.style.display = 'none';
-                        }, 1500);
-                    })
-                    .catch(err => {
-                        console.error('Failed to copy text: ', err);
-                    });
+                const addrContainer = e.target.closest('.addr-container');
+                copyToClipboard(text, addrContainer);
+            }
+            
+            // Handle clicks on copy buttons
+            if (e.target.classList.contains('copy-button')) {
+                const addrContainer = e.target.closest('.addr-container');
+                const addrElement = addrContainer.querySelector('.addr');
+                const text = addrElement.textContent;
+                copyToClipboard(text, addrContainer);
             }
         });
     }
@@ -64,13 +76,13 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#result').innerHTML = (fromPublicKey ?
                 '<div class="title">This public key gives v3R1 wallet with an address that can be represented in the following forms:</div>' :
                 '<div class="title">This TON address can be represented in the following forms:</div>') +
-                '<div><div class="title">HEX:</div><div class="addr">' + address.toString(false) + '</div></div>' +
+                '<div><div class="title">HEX:</div><div class="addr-container"><div class="addr-row"><div class="addr">' + address.toString(false) + '</div><button class="copy-button" title="Copy to clipboard">📋</button></div></div></div>' +
                 '<div class="title bold">Mainnet:</div>' +
-                '<div><div class="title">Bounceable:</div><div class="addr">' + address.toString(true, true, true, false) + '</div></div>' +
-                '<div><div class="title">Non-bounceable:</div><div class="addr">' + address.toString(true, true, false, false) + '</div></div>' +
+                '<div><div class="title">Bounceable:</div><div class="addr-container"><div class="addr-row"><div class="addr">' + address.toString(true, true, true, false) + '</div><button class="copy-button" title="Copy to clipboard">📋</button></div></div></div>' +
+                '<div><div class="title">Non-bounceable:</div><div class="addr-container"><div class="addr-row"><div class="addr">' + address.toString(true, true, false, false) + '</div><button class="copy-button" title="Copy to clipboard">📋</button></div></div></div>' +
                 '<div class="title bold">Testnet:</div>' +
-                '<div><div class="title">Bounceable:</div><div class="addr">' + address.toString(true, true, true, true) + '</div></div>' +
-                '<div><div class="title">Non-bounceable:</div><div class="addr">' + address.toString(true, true, false, true) + '</div></div>';
+                '<div><div class="title">Bounceable:</div><div class="addr-container"><div class="addr-row"><div class="addr">' + address.toString(true, true, true, true) + '</div><button class="copy-button" title="Copy to clipboard">📋</button></div></div></div>' +
+                '<div><div class="title">Non-bounceable:</div><div class="addr-container"><div class="addr-row"><div class="addr">' + address.toString(true, true, false, true) + '</div><button class="copy-button" title="Copy to clipboard">📋</button></div></div></div>';
         } catch (error) {
             $('#result').innerHTML = '<div class="title">Error: ' + error.message + '</div>';
         }
