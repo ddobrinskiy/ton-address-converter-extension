@@ -95,4 +95,23 @@ input {
     animation: fadeIn 0.3s;
     width: 100%;
     box-sizing: border-box;
+}
+
+.attribution {
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 12px;
+    color: #999;
+    opacity: 0.7;
+    font-style: italic;
+    border-top: 1px solid #eee;
+}
+
+.attribution a {
+    color: #3CA4DB;
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    text-decoration: underline;
 } 
