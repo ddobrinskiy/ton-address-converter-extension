@@ -8,6 +8,7 @@ A simple Chrome extension that allows you to convert TON (The Open Network) addr
 - Support for both Mainnet and Testnet addresses
 - Convert public keys to wallet addresses
 - Simple and intuitive interface with auto-focus
+- Click-to-copy functionality for all address formats
 
 ## Installation
 
@@ -25,7 +26,8 @@ Since this extension is not published to the Chrome Web Store, you need to load 
 3. The input field is automatically focused
 4. Press Ctrl+V (or Cmd+V on Mac) to paste from your clipboard
 5. The extension will automatically convert and display the address in various formats
-6. Alternatively, you can manually enter a TON address or public key in the input field
+6. Click on any address to copy it to your clipboard
+7. Alternatively, you can manually enter a TON address or public key in the input field
 
 ## Supported Address Formats
 
@@ -39,4 +41,4 @@ Since this extension is not published to the Chrome Web Store, you need to load 
 
 - HTML, CSS, JavaScript
 - TonWeb.js library for TON blockchain interactions
-- Clipboard API for reading clipboard data 
+- Clipboard API for clipboard operations 

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const $ = name => document.querySelector(name);
+    const $$ = name => document.querySelectorAll(name);
     const input = $('#input');
     const pasteButton = $('#paste-button');
     const ton = new TonWeb();
@@ -16,6 +17,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add click event listener to the paste button
     pasteButton.addEventListener('click', handlePasteButtonClick);
+
+    // Function to add click-to-copy functionality to all .addr elements
+    function setupCopyToClipboard() {
+        // Use event delegation for dynamically added .addr elements
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('addr')) {
+                const text = e.target.textContent;
+                navigator.clipboard.writeText(text)
+                    .then(() => {
+                        // Show a temporary "Copied!" message
+                        const originalText = e.target.innerHTML;
+                        e.target.innerHTML = 'Copied to clipboard!';
+                        
+                        // Restore original text after 1 second
+                        setTimeout(() => {
+                            e.target.innerHTML = originalText;
+                        }, 1000);
+                    })
+                    .catch(err => {
+                        console.error('Failed to copy text: ', err);
+                    });
+            }
+        });
+    }
+
+    // Set up the copy-to-clipboard functionality
+    setupCopyToClipboard();
 
     const showAddress = (value, fromPublicKey) => {
         try {
