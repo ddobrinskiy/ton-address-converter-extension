@@ -1,44 +1,29 @@
-# TON Address Converter Chrome Extension
+# TON Address Converter Extension
 
-A simple Chrome extension that allows you to convert TON (The Open Network) addresses between different formats.
+A Chrome extension that allows you to convert TON blockchain addresses between different formats.
 
 ## Features
 
-- Convert TON addresses between different formats (HEX, Bounceable, Non-bounceable)
-- Support for both Mainnet and Testnet addresses
-- Convert public keys to wallet addresses
-- Simple and intuitive interface with auto-focus
-- Click-to-copy functionality for all address formats
+- Convert between raw, user-friendly, and DNS formats of TON addresses
+- Copy converted addresses to clipboard with a single click
+- Simple and intuitive user interface
+- Keyboard shortcut: Shift+Command+K (⇧⌘K)
 
 ## Installation
 
-Since this extension is not published to the Chrome Web Store, you need to load it manually:
-
-1. Open Chrome and navigate to `chrome://extensions/`
-2. Enable "Developer mode" by toggling the switch in the top right corner
-3. Click on "Load unpacked" and select the folder containing this extension
-4. The extension should now be installed and visible in your browser toolbar
+1. Download or clone this repository
+2. Open Chrome and navigate to `chrome://extensions/`
+3. Enable "Developer mode" in the top-right corner
+4. Click "Load unpacked" and select the directory containing this extension
+5. The extension icon should appear in your browser toolbar
 
 ## Usage
 
-1. Copy a TON address or public key to your clipboard
-2. Click on the extension icon in your browser toolbar
-3. The input field is automatically focused
-4. Press Ctrl+V (or Cmd+V on Mac) to paste from your clipboard
-5. The extension will automatically convert and display the address in various formats
-6. Click on any address to copy it to your clipboard
-7. Alternatively, you can manually enter a TON address or public key in the input field
+1. Click on the extension icon in your browser toolbar or use the keyboard shortcut (⇧⌘K)
+2. Enter a TON address in any format
+3. The extension will automatically convert it to other formats
+4. Click on any converted address to copy it to your clipboard
 
-## Supported Address Formats
+## License
 
-- HEX format
-- Mainnet Bounceable
-- Mainnet Non-bounceable
-- Testnet Bounceable
-- Testnet Non-bounceable
-
-## Technologies Used
-
-- HTML, CSS, JavaScript
-- TonWeb.js library for TON blockchain interactions
-- Clipboard API for clipboard operations 
+MIT 
