@@ -1,6 +1,6 @@
 # TON Address Converter - Chrome Web Store Description
 
-## Short Description (up to 132 characters)
+## Short Description
 Convert TON blockchain addresses between different formats. Easily transform between hex, bounceable, and non-bounceable addresses for mainnet and testnet.
 
 ## Detailed Description

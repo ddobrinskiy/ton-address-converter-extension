@@ -33,3 +33,7 @@ Vibe-coded with [Cursor](https://cursor.com/) and very little JS knowledge.
 ## License
 
 MIT 
+
+## Support & Feedback
+
+If you have any questions or feedback, please contact me at Telegram [@dzlob](https://t.me/dzlob) or [open an issue](https://github.com/ddobrinskiy/ton-address-converter/issues) on GitHub.
