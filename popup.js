@@ -46,18 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
-    // Function to add click-to-copy functionality to all .addr elements
+    // Function to add click-to-copy functionality to copy buttons only
     function setupCopyToClipboard() {
-        // Use event delegation for dynamically added .addr elements
+        // Use event delegation for dynamically added copy buttons
         document.addEventListener('click', function(e) {
-            // Handle clicks on address elements
-            if (e.target.classList.contains('addr')) {
-                const text = e.target.textContent;
-                const addrContainer = e.target.closest('.addr-container');
-                copyToClipboard(text, addrContainer);
-            }
-            
-            // Handle clicks on copy buttons
+            // Only handle clicks on copy buttons
             if (e.target.classList.contains('copy-button')) {
                 const addrContainer = e.target.closest('.addr-container');
                 const addrElement = addrContainer.querySelector('.addr');
