@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "TON Address Converter",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Convert TON addresses between different formats",
   "action": {
     "default_popup": "popup.html",
@@ -20,8 +20,7 @@
   "commands": {
     "_execute_action": {
       "suggested_key": {
-        "default": "Shift+Command+K",
-        "mac": "Shift+Command+K"
+        "default": "Shift+Ctrl+K"
       },
       "description": "Activate the extension"
     }
