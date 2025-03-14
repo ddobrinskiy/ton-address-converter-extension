@@ -2,6 +2,8 @@
 
 A Chrome extension that allows you to convert TON blockchain addresses between different formats.
 
+Inspired by [ton.org/address](https://ton.org/address)
+
 Vibe-coded with [Cursor](https://cursor.com/) and very little JS knowledge.
 
 ## Features
