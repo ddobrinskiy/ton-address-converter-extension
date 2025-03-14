@@ -2,21 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const $ = name => document.querySelector(name);
     const $$ = name => document.querySelectorAll(name);
     const input = $('#input');
-    const pasteButton = $('#paste-button');
     const ton = new TonWeb();
 
     // Auto-focus the input field when the popup opens
     input.focus();
-
-    // Handle paste button click - do nothing as requested
-    function handlePasteButtonClick(e) {
-        // Prevent default button behavior
-        e.preventDefault();
-        // Do nothing else
-    }
-
-    // Add click event listener to the paste button
-    pasteButton.addEventListener('click', handlePasteButtonClick);
 
     // Function to copy text to clipboard and show notification
     function copyToClipboard(text, container) {
