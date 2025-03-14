@@ -36,4 +36,4 @@ MIT
 
 ## Support & Feedback
 
-If you have any questions or feedback, please contact me at Telegram [@dzlob](https://t.me/dzlob) or [open an issue](https://github.com/ddobrinskiy/ton-address-converter/issues) on GitHub.
+If you have any questions or feedback, please contact me on Telegram [@dzlob](https://t.me/dzlob) or [open an issue](https://github.com/ddobrinskiy/ton-address-converter/issues) on GitHub.
