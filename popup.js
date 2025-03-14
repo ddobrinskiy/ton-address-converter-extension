@@ -24,16 +24,29 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('click', function(e) {
             if (e.target.classList.contains('addr')) {
                 const text = e.target.textContent;
+                const addrContainer = e.target.parentNode;
+                
+                // Copy the text to clipboard
                 navigator.clipboard.writeText(text)
                     .then(() => {
-                        // Show a temporary "Copied!" message
-                        const originalText = e.target.innerHTML;
-                        e.target.innerHTML = 'Copied to clipboard!';
+                        // Check if notification already exists
+                        let notification = addrContainer.querySelector('.copy-notification');
                         
-                        // Restore original text after 1 second
+                        // If notification doesn't exist, create it
+                        if (!notification) {
+                            notification = document.createElement('div');
+                            notification.className = 'copy-notification';
+                            addrContainer.appendChild(notification);
+                        }
+                        
+                        // Show the notification
+                        notification.textContent = 'Copied to clipboard!';
+                        notification.style.display = 'block';
+                        
+                        // Hide the notification after 1.5 seconds
                         setTimeout(() => {
-                            e.target.innerHTML = originalText;
-                        }, 1000);
+                            notification.style.display = 'none';
+                        }, 1500);
                     })
                     .catch(err => {
                         console.error('Failed to copy text: ', err);

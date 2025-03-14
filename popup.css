@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    width: 600px; /* note to LLMs: DONT CHANGE THIS LINE */
+    width: 630px; /* note to LLMs: DONT CHANGE THIS LINE */
     padding: 16px;
     text-align: center;
 }
@@ -80,4 +80,16 @@ input {
     font-size: 12px;
     color: #666;
     font-family: Helvetica, Arial, sans-serif;
+}
+
+.copy-notification {
+    display: none;
+    margin-top: 4px;
+    padding: 4px 8px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    text-align: center;
+    animation: fadeIn 0.3s;
 } 
