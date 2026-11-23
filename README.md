@@ -12,10 +12,23 @@ Vibe-coded with [Cursor](https://cursor.com/) and very little JS knowledge.
 - Auto-focus input field on popup open, just press ⌘V/Ctrl+V to paste your address
 - Copy converted addresses to clipboard with a single click on 📋 button
 
+## Keyboard Shortcuts
+
+| Platform       | Shortcut to Open Extension |
+|----------------|----------------------------|
+| MacOS          | ⇧⌘K                        |
+| Linux/Windows  | Shift+Ctrl+K               |
+
+## Demo
+
 <img src="./demo.gif" width="500" alt="Demo GIF">
 
 
 ## Installation
+
+Get it from Chrome Web Store: [TON Address Converter](https://chromewebstore.google.com/detail/cidkeepfnbhbcpbifdgkjmccbdifkcld)
+
+OR install from source:
 
 1. Download or clone this repository
 2. Open Chrome and navigate to `chrome://extensions/`
